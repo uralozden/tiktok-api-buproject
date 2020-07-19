@@ -19,5 +19,12 @@ app.get('/', (req, res) => {
     }
 })();
 
+
 })
+
+app.get('/ural', (req, res) => {
+  res.json({"message":"test amk"})
+});
+
+
 app.listen(Port)
