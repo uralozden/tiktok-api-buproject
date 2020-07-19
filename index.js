@@ -2,19 +2,19 @@
 const app = require('express')()
 const TikTokScraper = require('tiktok-scraper');
 
+  // Start function
+  const start = async function(a, b) {
+    const result = await TikTokScraper.hashtag('kombi', { number: 100 });
+    console.log(result); 
+  }
+
+  
 // HTTP GET isteğine JSON tipinde yanıt verelim,
 app.get('/', (req, res) => {
 
-  (async () => {
-    try {
-        const posts = await TikTokScraper.hashtag('kombi', { number: 500 });
-        console.log(posts); 
-        res.json(posts)
+// Call start
+start();
 
-    } catch (error) {
-        console.log(error);
-    }
-})();
 
 })
 
