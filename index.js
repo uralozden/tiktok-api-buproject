@@ -1,6 +1,8 @@
+
 // express'i dahil edelim,
 const app = require('express')()
 const TikTokScraper = require('tiktok-scraper');
+var PORT = process.env.PORT || 3000;
 
   // Start function
   const start = async function(a, b) {
@@ -19,4 +21,4 @@ start();
 })
 
 // Uygulama 3000 portundan çalışacak.
-app.listen(3000)
+app.listen(PORT)
