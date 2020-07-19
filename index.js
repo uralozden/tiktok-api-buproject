@@ -1,24 +1,21 @@
-
 // express'i dahil edelim,
 const app = require('express')()
 const TikTokScraper = require('tiktok-scraper');
-var PORT = process.env.PORT || 3000;
 
-  // Start function
-  const start = async function(a, b) {
-    const result = await TikTokScraper.hashtag('kombi', { number: 100 });
-    console.log(result); 
-  }
-
-  
 // HTTP GET isteğine JSON tipinde yanıt verelim,
 app.get('/', (req, res) => {
 
-// Call start
-start();
+  (async () => {
+    try {
+        const posts = await TikTokScraper.hashtag('kombi', { number: 500 });
+        res.json(posts)
 
+    } catch (error) {
+        console.log(error);
+    }
+})();
 
 })
 
 // Uygulama 3000 portundan çalışacak.
-app.listen(PORT)
+app.listen(3000)
