@@ -15,7 +15,7 @@ app.get('/buproject', (req, res) => {
     try {
         var keyword = req.query.keyword; // $_GET["id"]
         if (keyword){
-          const posts = await TikTokScraper.hashtag(keyword, { number: 10 });
+          const posts = await TikTokScraper.hashtag(keyword, { number: 100 });
           if(!posts){
             posts = "bir sorun var"
           }
