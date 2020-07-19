@@ -1,7 +1,7 @@
 // express'i dahil edelim,
 const app = require('express')()
 const TikTokScraper = require('tiktok-scraper');
-
+var Port = process.env.Port || 3000
 // HTTP GET isteğine JSON tipinde yanıt verelim,
 app.get('/', (req, res) => {
 
@@ -16,6 +16,4 @@ app.get('/', (req, res) => {
 })();
 
 })
-
-// Uygulama 3000 portundan çalışacak.
-app.listen(3000)
+app.listen(Port)
