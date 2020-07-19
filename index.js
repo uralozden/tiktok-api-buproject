@@ -2,7 +2,8 @@
 const app = require('express')()
 const TikTokScraper = require('tiktok-scraper');
 
-var Port = 3000
+var Port = process.env.PORT || 3000;
+
 // HTTP GET isteğine JSON tipinde yanıt verelim,
 app.get('/', (req, res) => {
 
